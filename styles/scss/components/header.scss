@@ -1,0 +1,68 @@
+$nav-hover-clr: rgb(83, 157, 255);
+
+.header-top-color {
+        background-color: white;
+}
+
+.header-top-icon  {
+        width: 20px;
+        padding-bottom: 2px;
+}
+
+.header-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 1418px;
+        padding-bottom: 0px;
+        font-size: 12px;
+}
+
+.header-top-link > a {
+        color: black;
+        border-left: 1px solid black;
+        padding: 5px 100px;
+        padding-right: 108px;
+        transition: 200ms ease-in-out;
+        &:hover {
+                background-color: $nav-hover-clr;
+                color: white;
+        }
+}
+
+.header-bottom {
+        background-color: black;
+        padding-top: 0;
+}
+
+.navbar-brand {
+        color: white;
+        font-weight: 200;
+        font-size: 17px;
+        margin-right: 10rem;
+        &:hover {
+                color: white;
+        }
+}
+
+.nav-link {
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        &:hover {
+                color: $nav-hover-clr;
+        }
+}
+
+.nav-bottom-logo {
+        width: 30px;
+        height: 30px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show  {
+        color: white;
+        &:hover {
+                color: $nav-hover-clr;
+        }
+}
+
+
