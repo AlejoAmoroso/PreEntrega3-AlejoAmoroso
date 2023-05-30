@@ -47,8 +47,8 @@ continueBtn.addEventListener('click', saveToLocalStorage);
 
 // agarra el valor que se typea en el input de enviar (soruceAmount), 
 // si el valor es diferente que un string vacio usa la funcion fondosEnviar para realizar el calculo de lo que se esta typeando en el input y luego lo muestra en el input de fondos a recibir.
-function convertCurrency(event) {
-        let sourceValue = event.target.value;
+function convertCurrency(e) {
+        let sourceValue = e.target.value;
         let convertedAmount = 0;
 
         if (sourceValue !== "") {
@@ -60,8 +60,8 @@ function convertCurrency(event) {
 
 // agarra el valor del input de fondos a recibir (destinationAmount)
 // si el valor es diferente a un string vacio hace el calculo usando la funcion fondosRecibir de lo que se esta typeando en el input y luego lo muestra en el input de fondos a enviar.
-function updateSourceAmount(event) {
-        let destinationValue = event.target.value
+function updateSourceAmount(e) {
+        let destinationValue = e.target.value
         let originalAmount = 0;
 
         if (destinationValue !== "") {
@@ -71,7 +71,7 @@ function updateSourceAmount(event) {
         sourceAmount.value = originalAmount;
 }
 
-// checkea si ya existe un valor en el localStorage, lo convierte en un objeto con parse y lo muestra en balance-monto
+// checkea si ya existe un valor en el localStorage y lo muestra en balance-monto
 let storedConvertedAmount = localStorage.getItem("valorConversionUniUSD");
 let parseAmount = JSON.parse(storedConvertedAmount);
 let balanceMonto = document.getElementById("balance-monto")
