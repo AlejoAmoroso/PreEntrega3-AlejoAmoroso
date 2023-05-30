@@ -45,17 +45,21 @@ sourceAmount.addEventListener('input', convertCurrency);
 destinationAmount.addEventListener('input', updateSourceAmount);
 continueBtn.addEventListener('click', saveToLocalStorage);
 
+// agarra el valor que se typea en el input de enviar (soruceAmount), 
+// si el valor es diferente que un string vacio usa la funcion fondosEnviar para realizar el calculo de lo que se esta typeando en el input y luego lo muestra en el input de fondos a recibir.
 function convertCurrency(event) {
         let sourceValue = event.target.value;
         let convertedAmount = 0;
 
         if (sourceValue !== "") {
-                convertedAmount = truncFunc(fondosEnviarCalculo(sourceValue), 3);
+                convertedAmount = truncFunc(fondosEnviarCalculo(sourceValue), 3); 
         }
 
         destinationAmount.value = convertedAmount;
 }
 
+// agarra el valor del input de fondos a recibir (destinationAmount)
+// si el valor es diferente a un string vacio hace el calculo usando la funcion fondosRecibir de lo que se esta typeando en el input y luego lo muestra en el input de fondos a enviar.
 function updateSourceAmount(event) {
         let destinationValue = event.target.value
         let originalAmount = 0;
@@ -67,15 +71,18 @@ function updateSourceAmount(event) {
         sourceAmount.value = originalAmount;
 }
 
-// checkea si ya existe un valor en el localStorage y lo muestra en balance-monto
+// checkea si ya existe un valor en el localStorage, lo convierte en un objeto con parse y lo muestra en balance-monto
 let storedConvertedAmount = localStorage.getItem("valorConversionUniUSD");
+let parseAmount = JSON.parse(storedConvertedAmount);
 let balanceMonto = document.getElementById("balance-monto")
-if (storedConvertedAmount) {
-        balanceMonto.textContent = `$${storedConvertedAmount} UniUSD`;
+if (parseAmount) {
+        balanceMonto.textContent = `$${parseAmount} UniUSD`;
 } else {
         balanceMonto.textContent = "$0.00 UniUSD";
 }
 
+// si se toca el boton, agarra el valor que hay en el input de fondos a recibir, si el valor es igual a un string vacio arroja un error representado por bordes en color rojo en los inputs y devuelve la funcion antes de tiempo
+// sino chequea si hay o no un valor dentro del local storage. si existe un valor, suma el valor que se typeo en el input de recibir con lo que ya existe en el storage y si no existe un valor, guarda el nuevo valor en el storage.
 function saveToLocalStorage() {
         let convertedAmount = destinationAmount.value;
         if (convertedAmount === "") {
@@ -97,14 +104,15 @@ function saveToLocalStorage() {
         });
 
         let storedConvertedAmount = localStorage.getItem("valorConversionUniUSD");
+        let parseAmount = JSON.parse(storedConvertedAmount);
         let newConvertedAmount = 0;
 
         if (storedConvertedAmount) {
-                newConvertedAmount = parseFloat(storedConvertedAmount) + parseFloat(convertedAmount);
+                newConvertedAmount = truncFunc(parseFloat(parseAmount) + parseFloat(convertedAmount), 3);
                 localStorage.setItem("valorConversionUniUSD", newConvertedAmount);
         } else {
                 newConvertedAmount = parseFloat(convertedAmount);
-                localStorage.setItem("valorConversionUniUSD", convertedAmount)
+                localStorage.setItem("valorConversionUniUSD", JSON.stringify(convertedAmount));
         }
 
         let balanceMonto = document.getElementById("balance-monto");
