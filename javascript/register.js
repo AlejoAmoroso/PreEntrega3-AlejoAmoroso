@@ -37,6 +37,6 @@ signupForm.addEventListener("submit", (e) => {
                 Users.push({email: email, username: username, password: password, transactionNumber: 0});
                 localStorage.setItem("users", JSON.stringify(Users));
 
-                window.location.href = "/login.html"
+                window.location.href = "/pages/login.html"
         }
 })
