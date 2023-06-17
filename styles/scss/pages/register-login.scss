@@ -1,0 +1,94 @@
+$error-color: #dd476f; 
+
+.img-login-singup {
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        width: calc(50% - 1.5rem)
+}
+
+.register-title {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 3rem;
+        margin-top: 9rem;
+        font-size: 30px;
+        font-weight: 800;
+}
+
+.signup-form-label {
+        font-size: 12px;
+        font-weight: 600;
+}
+
+.signup-form-container {
+        margin-bottom: 2rem;
+        width: 100%;
+}
+
+.signup-form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+}
+
+.signup-form-input {
+        border-radius: 4px;
+        width: 100%;
+        height: 3rem;
+        font-size: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.371);
+        padding-left: 10px;
+        &:focus {
+                outline: 3px solid rgba(0, 136, 255, 0.386);
+        }
+}
+
+.outline-red {
+        border: 1px solid $error-color;
+}
+
+.signup-btn {
+        border-radius: 20px;
+        width: 100%;
+        font-weight: 600;
+        padding: 0.5rem 0.5rem;
+}
+
+.signup-text-blue {
+        color: rgb(0, 110, 255);
+}
+
+.signup-text {
+        font-size: 12px;
+}
+
+.text-big {
+        font-size: 16px;
+}
+
+.signup-text-login {
+        color: black;
+        text-decoration: underline;
+}
+
+.ov-h {
+        overflow: hidden;
+}
+
+.input-helper {
+        font-size: 12px;
+        margin-top: 2rem;
+        color: gray;
+}
+
+.error-span {
+        color: $error-color;
+}
+
+@media (max-width: 992px) {
+        .img-login-singup {
+                display: none;
+        }
+}

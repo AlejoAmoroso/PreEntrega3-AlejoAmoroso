@@ -32,6 +32,7 @@ $nav-hover-clr: rgb(83, 157, 255);
 .header-bottom {
         background-color: black;
         padding-top: 0;
+        z-index: 1;
 }
 
 .navbar-brand {
@@ -65,4 +66,7 @@ $nav-hover-clr: rgb(83, 157, 255);
         }
 }
 
-
+.navbar {
+        z-index: 1;
+        background-color: black;
+}

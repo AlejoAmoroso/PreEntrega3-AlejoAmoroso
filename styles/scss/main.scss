@@ -3,11 +3,24 @@ a {
         text-decoration: none;
 }
 
+body {
+        font-family: 'IBM Plex Sans', sans-serif;
+}
+
 // Header
 @import "./components/header.scss";
 
 // Pages
 
+// Index/Home
+
+@import "./pages/home.scss";
+
+// Register Login
+
+@import "./pages/register-login.scss";
+
 // Agregar
 
 @import "./pages/agregar.scss";
+

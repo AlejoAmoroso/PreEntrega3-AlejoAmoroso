@@ -3,6 +3,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
 .header-top-color {
   background-color: white;
 }
@@ -35,6 +39,7 @@ a {
 .header-bottom {
   background-color: black;
   padding-top: 0;
+  z-index: 1;
 }
 
 .navbar-brand {
@@ -68,6 +73,239 @@ a {
   color: rgb(83, 157, 255);
 }
 
+.navbar {
+  z-index: 1;
+  background-color: black;
+}
+
+.home-background {
+  background-image: url("../../../assets/home-background.jpg");
+  background-size: cover;
+  background-position: 100%;
+  height: 25rem;
+  width: 100%;
+  filter: blur(3px);
+  position: fixed;
+  top: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.home-balance-monto-container {
+  background-color: black;
+}
+
+.in-debt {
+  color: rgb(235, 0, 0);
+}
+
+.text-white {
+  color: white;
+}
+
+.home-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.home-card {
+  background-color: hsla(0, 0%, 99%, 0.6);
+  backdrop-filter: blur(2.3393px);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2.3rem 4rem;
+  border-radius: 4px;
+  gap: 0.5rem;
+}
+
+.home-balances-container__container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.card-amounts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.card-amounts__span {
+  font-size: 20px;
+}
+
+.font-big {
+  font-size: 40px;
+}
+
+.home-balances-img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.card-amounts__h5 {
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.gray {
+  color: rgb(89, 89, 89);
+  font-size: 14px;
+}
+
+.card-actions__button {
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.coin-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.coin-image {
+  width: 40px;
+}
+
+.coin-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.coin-small {
+  font-size: 12px;
+  color: rgb(85, 85, 85);
+}
+
+.cointable {
+  background-color: rgba(255, 255, 255, 0.708);
+  width: 100%;
+  border-radius: 4px;
+  backdrop-filter: blur(0.5px);
+  box-shadow: 0 1.2rem 1.6rem -4px rgba(16, 24, 40, 0.08), 0 4px 6rem -0.2rem rgba(16, 24, 40, 0.03);
+  border: solid 1px rgb(201, 201, 201);
+}
+
+.cointable__thead {
+  background-color: rgb(235, 235, 235);
+  font-size: 15px;
+}
+
+.cointable__thead th {
+  padding: 13px 13px;
+}
+
+.cointable__row td {
+  padding: 15px 20px;
+}
+
+.cointable__row {
+  border-bottom: solid 1px rgb(201, 201, 201);
+}
+
+.img-login-singup {
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  width: calc(50% - 1.5rem);
+}
+
+.register-title {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 3rem;
+  margin-top: 9rem;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.signup-form-label {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.signup-form-container {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.signup-form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.signup-form-input {
+  border-radius: 4px;
+  width: 100%;
+  height: 3rem;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.371);
+  padding-left: 10px;
+}
+.signup-form-input:focus {
+  outline: 3px solid rgba(0, 136, 255, 0.386);
+}
+
+.outline-red {
+  border: 1px solid #dd476f;
+}
+
+.signup-btn {
+  border-radius: 20px;
+  width: 100%;
+  font-weight: 600;
+  padding: 0.5rem 0.5rem;
+}
+
+.signup-text-blue {
+  color: rgb(0, 110, 255);
+}
+
+.signup-text {
+  font-size: 12px;
+}
+
+.text-big {
+  font-size: 16px;
+}
+
+.signup-text-login {
+  color: black;
+  text-decoration: underline;
+}
+
+.ov-h {
+  overflow: hidden;
+}
+
+.input-helper {
+  font-size: 12px;
+  margin-top: 2rem;
+  color: gray;
+}
+
+.error-span {
+  color: #dd476f;
+}
+
+@media (max-width: 992px) {
+  .img-login-singup {
+    display: none;
+  }
+}
 .balance {
   display: flex;
   justify-content: flex-start;
@@ -273,7 +511,7 @@ a {
   text-align: right !important;
 }
 
-tbody {
+.add-tbody {
   display: table-row-group;
   vertical-align: text-top;
 }
