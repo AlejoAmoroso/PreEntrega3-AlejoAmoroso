@@ -14,7 +14,7 @@ if(!userLogin) {
 logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("login_sucessful");
         localStorage.removeItem("valorConversionUniUSD");
-        window.location.href = "/pages/login.html";
+        window.location.href = "../pages/login.html";
 })
 
 let convertirAPesos = (monto) => {
