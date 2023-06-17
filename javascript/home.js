@@ -8,7 +8,7 @@ let logoutBtn = document.querySelector("#logoutBtn")
 let userLogin = JSON.parse(localStorage.getItem("login_successful")) || false;
 
 if(!userLogin) {
-        window.location.href = "/pages/login.html";
+        window.location.href = "../pages/login.html";
 }
 
 logoutBtn.addEventListener("click", () => {
