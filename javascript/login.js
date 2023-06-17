@@ -19,6 +19,6 @@ loginForm.addEventListener("submit", (e) => {
                 return;
         } else {
                 localStorage.setItem("login_successful", JSON.stringify(validUser));
-                window.location.href = "/index.html"
+                window.location.href = "../index.html"
         }
 })
